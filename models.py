@@ -10,4 +10,8 @@ class EncoderCNN(nn.Module):
         self.resnet=nn.Sequential(*modules)
         self.linear=nn.Linear(resnet.fc.in_feature,embed_size)
         self.bn=nn.BatchNorm1d(embed_size)
-    
+    def forward(self,image):
+        with torch.no_grad():
+            features=self.resnet(image).squeeze()
+            return self.bn(self.linear(features))
+        

@@ -7,6 +7,11 @@ from config import *
 import json
 from tqdm import tqdm
 
+image_dir = "Flickr8k_Dataset"
+caption_file = "Flickr8k_text/Flickr8k.token.txt"
+vocab_path = "utils/vocab.json"  # or just "vocab.json" if it's in root
+
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load dataset and vocab

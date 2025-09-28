@@ -5,6 +5,11 @@ import torchvision.transforms as transforms
 import json
 import os
 
+image_dir = "Flickr8k_Dataset"
+caption_file = "Flickr8k_text/Flickr8k.token.txt"
+vocab_path = "utils/vocab.json"  # or just "vocab.json" if it's in root
+
+
 class FlickrDataset(Dataset):
     def __init__(self, image_dir, caption_file, vocab_path):
         self.image_dir = image_dir

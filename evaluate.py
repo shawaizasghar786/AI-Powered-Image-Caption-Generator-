@@ -4,6 +4,11 @@ from PIL import Image
 import torchvision.transforms as transforms
 import json
 
+image_dir = "Flickr8k_Dataset"
+caption_file = "Flickr8k_text/Flickr8k.token.txt"
+vocab_path = "utils/vocab.json"  # or just "vocab.json" if it's in root
+
+
 def load_image(image_path):
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
